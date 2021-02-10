@@ -8,14 +8,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="urlshortener" />
+        <module name="kgs" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="kgs" target="1.8" />
       <module name="urlshortener" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="kgs" options="-parameters" />
       <module name="urlshortener" options="-parameters" />
     </option>
   </component>

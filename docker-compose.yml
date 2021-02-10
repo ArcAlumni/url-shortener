@@ -19,4 +19,20 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - 'C:/data/db:/data/db'
+      - 'C:/data/mongodb:/data/db'
+  kgs:
+    build: ./kgs/
+    container_name: url-shortener-kgs
+    depends_on:
+      - database-kgs
+    ports:
+      - 9091:9091
+  database-kgs:
+    image: postgres
+    restart: always
+    volumes:
+      - 'C:/data/postgres-data:/var/lib/postgresql/data'
+    environment:
+      POSTGRES_PASSWORD: pwd123
+    ports:
+      - 5432:5432
