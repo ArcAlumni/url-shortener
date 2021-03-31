@@ -21,6 +21,7 @@ public class KeyGenerator {
 
     private static final char[] BASE62_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 
+    private static final int DEFAULT_KEY_LENGTH = 8;
     private static final int BATCH_SIZE = 10;
     private static final int MAX_ROWS = 1000;
     private static final int CACHE_CAPACITY = 500;
@@ -74,7 +75,7 @@ public class KeyGenerator {
 
     private String generateBase62Random() {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < DEFAULT_KEY_LENGTH; i++) {
             Random random = new Random();
             int index = random.nextInt(62);
             sb.append(BASE62_CHARS[index]);

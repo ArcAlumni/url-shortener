@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.urlshortener.urlshortener.model.UrlInfo;
 import com.urlshortener.urlshortener.repository.UrlInfoRepository;
 
+import com.urlshortener.urlshortener.service.KeyGenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,9 +27,14 @@ public class UrlController {
     @Autowired
     private UrlInfoRepository urlInfoRepository;
 
+    @Autowired
+    private KeyGenService keyGenService;
+
     @PostMapping("/url")
     public String addUrl(@RequestBody UrlInfo urlInfo, HttpServletRequest request) {
-        urlInfo.setIdHash(getIdHash(urlInfo.getUrl()));
+        //TODO validate URL
+        String hash = keyGenService.getRandomKey();
+        urlInfo.setIdHash(hash);
         urlInfoRepository.save(urlInfo);
         return new StringBuilder().append(request.getHeader("host")).append("/").append(urlInfo.getIdHash()).toString();
     }
@@ -44,15 +50,5 @@ public class UrlController {
         });
     }
 
-    private String getIdHash(String url) {
-        MessageDigest md;
-        try {
-            md = MessageDigest.getInstance("MD5");
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Internal Error");
-        }
-        Base62 base62 = Base62.createInstance();
-        return new String(base62.encode(md.digest(url.getBytes(StandardCharsets.UTF_8))), StandardCharsets.UTF_8);
-    }
 
 }
