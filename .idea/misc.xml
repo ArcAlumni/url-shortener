@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/app/pom.xml" />
         <option value="$PROJECT_DIR$/kgs/pom.xml" />
+        <option value="$PROJECT_DIR$/kgs-worker/pom.xml" />
+        <option value="$PROJECT_DIR$/kgs-web/pom.xml" />
       </list>
     </option>
   </component>

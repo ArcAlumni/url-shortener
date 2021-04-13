@@ -21,7 +21,7 @@ services:
     volumes:
       - '/data/mongodb:/data/db'
   kgs:
-    build: ./kgs/
+    build: ./kgs-web/
     container_name: url-shortener-kgs
     depends_on:
       - database-kgs

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/kgs/kgs.iml" filepath="$PROJECT_DIR$/kgs/kgs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kgs-web/kgs.iml" filepath="$PROJECT_DIR$/kgs-web/kgs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kgs-worker/kgs-worker.iml" filepath="$PROJECT_DIR$/kgs-worker/kgs-worker.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/url-shortener.iml" filepath="$PROJECT_DIR$/.idea/url-shortener.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/urlshortener.iml" filepath="$PROJECT_DIR$/app/urlshortener.iml" />
     </modules>
