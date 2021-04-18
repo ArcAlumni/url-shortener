@@ -12,5 +12,6 @@
 # Run
 #
 FROM openjdk:11-jre-slim
-COPY target/*.jar app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ADD /app
+COPY target/*.jar /app
+ENTRYPOINT ["java","-jar","/app/app.jar"]
