@@ -36,7 +36,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A URL shortener is a simple tool that takes a long URL and turns it into whatever URL you would like it to be. In this project we are solving this problem in a distributed environment. This project has below layers.
+A URL shortener is a simple tool that takes a long URL and turns it into whatever URL you would like it to be and in this project we are solving this in a distributed environment. This project has below modules.
 
 * App
 * Kgs-Web
@@ -120,6 +120,4 @@ Distributed under the MIT License. See [LICENSE][license-url] for more informati
 [issues-url]: https://github.com/ArcAlumni/url-shortener/issues
 [license-shield]: https://img.shields.io/github/license/ArcAlumni/url-shortener.svg?style=for-the-badge
 [license-url]: https://github.com/ArcAlumni/url-shortener/blob/main/LICENSE
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/ArcAlumni
-[product-screenshot]: images/screenshot.png
+
